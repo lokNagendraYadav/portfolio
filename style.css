@@ -1,0 +1,704 @@
+/* Particle Background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    background-color: rgb(18, 18, 22);
+   
+}
+
+
+
+/* Importing Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.name-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        white-space: nowrap; /* Prevents text from breaking into a new line */
+    width: 100%;
+    justify-content: center;
+}
+
+
+/* Main Name Styling */
+.name {
+    font-size: 5rem; 
+    
+    color: rgb(160, 60, 236);
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* Subtitle Styling */
+.sub {
+    font-size: 2rem;
+    color: azure;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    display: block; /* Ensures each text is on a new line */
+    margin-bottom: 1px; /* Adds spacing */
+}
+
+/* Profession Line */
+.sub2 {
+    font-size: 1.4rem;
+    color: azure;
+    display: block; /* Ensures each text is on a new line */
+    margin-bottom: 10px; /* Adds spacing */
+}
+
+.ost {
+    position: absolute;
+    top: 93vh;
+    color: #f2f2f5;
+    right: 2vh;
+}
+
+/* Add sequential delay for each text element */
+.sub, .name, .sub2 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.sub {
+    animation-delay: 0.5s;  /* "Hey, it's" appears first */
+}
+
+.name {
+    animation-delay: 1s;  /* Main name appears after "Hey, it's" */
+}
+
+.sub2 {
+    animation-delay: 1.5s;  /* Profession line appears last */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .tst{
+        right: 15vh;
+    }
+    }
+
+/* Navbar */
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(228, 152, 234, 0.03);
+   
+    backdrop-filter: blur(1px);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Ensures left and right alignment */
+    align-items: center;
+}
+
+/* Left-aligned Portfolio */
+.nav-left {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 60px;
+    
+    color: rgb(244, 240, 240);
+    text-decoration: none;
+    cursor: default;
+}
+
+/* Right-aligned Navigation Items */
+.nav-right {
+   
+    display: flex;
+    color: rgb(190, 22, 22);
+    gap: 15px;
+    margin-right: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+.nav-right a{
+    color: whitesmoke;
+}
+
+/* Navbar Buttons */
+.nav-right li {
+  
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 15px;
+    background: rgba(62, 3, 113, 0.801);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: rgb(244, 240, 240);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    
+}
+
+/* Hover Effects */
+.nav-right li:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+/*media ofr nav bar*/
+@media screen and (max-width: 500px)
+{
+    .nav-right{
+        gap: 0px;
+        
+    }
+    .nav-left{
+        margin-left: 30px;
+        
+    }
+}
+
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+    .name-container {
+        top: 35%;
+        left: 35%;
+        transform: translate(-35%, -35%);
+    }
+    .name {
+        font-size: 4rem;
+    }
+    .sub {
+        font-size: 1.8rem;
+    }
+    .sub2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .name-container {
+        top: 30%;
+        left: 30%;
+        transform: translate(-30%, -30%);
+    }
+    .name {
+        font-size: 2.9rem;
+        letter-spacing: 1px;
+    }
+    .sub {
+        font-size: 1.5rem;
+    }
+    .sub2 {
+        font-size: 1rem;
+    }
+}
+
+
+  
+/* Page Body */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    display: flex;
+  flex-direction: column;
+}
+
+/*video*/
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+}
+
+
+/* About Section */
+.about-section {
+    position: absolute;
+    top: 100vh; /* Adjusted to start after name and video */
+   
+    margin-left: 50px;
+    color: white;
+    
+    z-index: 15;
+    font-size: 1.2rem;
+}
+
+
+.about-container {
+    max-width: 800px;
+    width: 90%; /* Adjusts dynamically */
+    margin: auto;
+}
+@media screen and (max-width: 768px) {
+    .about-section{
+        margin-left: 5px;
+    }
+}
+
+.rocket{
+   position: absolute;
+   top: 98vh;
+   right: 5vw;
+   z-index: 10;
+   
+    
+}
+@media screen and (max-width: 1024px) {
+    .rocket {
+        display: none; /* Hide on smaller screens */
+    }
+}
+
+/*projects*/
+/* Projects Section */
+.skills-section {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 600px; /* Large rectangle */
+    background-color: transparent; /* Transparent background */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    margin-bottom: 100px;
+    
+    
+    
+}
+.skills-section::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* Covers the entire section */
+    border: 3px solid transparent; /* Creates space for gradient */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    background: linear-gradient(45deg, #ff6b6b, #6b6bff, #6bffb5); /* Gradient colors */
+    background-origin: border-box;
+    -webkit-mask: linear-gradient(white, white) padding-box, linear-gradient(white, white);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1; /* Places it behind the content */
+}
+.skills-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Projects Title */
+.skills-container h2 {
+    font-size: 2.5rem;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 10px;
+}
+@media screen and (max-height: 450px) {
+    .skills-section{
+        top: 200vh;
+    }
+    
+        
+ }
+ .tst{
+    
+        color: white; /* Or any color visible against the background */
+        font-size: 1rem; /* Make it a reasonable size */
+    margin-left: -250px;
+    margin-top: 580px;
+    
+ }
+
+/* prohject*/
+#proje {
+    position: absolute;
+    top: 260vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    margin-left: 30px;
+    max-width: 1400px; /* Add this line to limit the maximum width */
+    margin-right: auto; /* To center the container if it's less than 100% width */
+}
+
+
+
+.box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    cursor: pointer;
+    min-height: 300px;
+    
+    
+}
+.box5{
+    min-height: unset;
+}
+
+/* Hover Effect */
+.box:hover {
+    box-shadow: 0 0 25px rgba(160, 60, 236, 0.8), 0 0 40px rgba(160, 60, 236, 0.6);
+    transform: translateY(-5px);
+    border-color: rgba(160, 60, 236, 0.8);
+}
+@media screen and (min-width: 1200px) {
+    .box1 {
+        width: 300px;
+        height: 300px;
+        
+        
+    }
+
+    .box2 {
+        width: 300px;
+        height: 300px;
+    }
+
+    .box3 {
+        width: 300px;
+        height: 600px;
+    }
+
+    .box4 {
+        width: 680px;
+        height: 300px;
+        margin-left: -380px;
+        margin-top: -300px;
+    }
+    .box5 {
+        margin-right: -390px;
+        width: 300px;
+    }
+}
+
+
+.na{
+    position: absolute;
+   left: -50px;
+   
+    color: #f2f2f5;
+    
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 6rem;
+    margin-left: 75px;
+    letter-spacing: 8px;
+ -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 90%);
+  mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 90%);
+    
+}
+@media screen and (max-width: 1450px) {
+    .na{
+        font-size: 2rem;
+        margin-left: 23px;
+       
+        
+    }
+}
+
+@media screen and (max-height: 600px) {
+   #proje{
+    top: 300vh;
+   }
+}
+   @media screen and (max-height: 450px) {
+    #proje{
+     top: 350vh;
+    }
+   }
+   @media screen and (max-height: 380px) {
+    #proje{
+     top: 400vh;
+    }
+   }
+
+/*slide*/
+.slider-wrapper {
+    position: absolute;
+    top: 390vh;
+    width: 100%;
+    
+  }
+ 
+  
+
+  /*smoth transtion*/
+  .slider-container.no-transition {
+    scroll-behavior: auto !important;
+  }
+  
+
+/*scroll bar rm*/
+.slider-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+  }
+  
+  .slider-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  
+
+.slider-container {
+    
+
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 60px;
+    height: 100vh;
+    align-items: center;
+    scroll-behavior: smooth;
+    
+    
+  }
+  
+  .slide {
+    background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+    flex: 0 0 80%;
+    height: 80%;
+    border-radius: 20px;
+    scroll-snap-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+   
+  }
+  
+  .slide.active {
+    transform: scale(1.05);
+    box-shadow: 0 0 60px rgba(0,0,0,0.7);
+  }
+
+  @media screen and (max-height: 600px) {
+    .slider-wrapper{
+     top: 470vh;
+    }
+ }
+    @media screen and (max-height: 450px) {
+     .slider-wrapper{
+      top: 570vh;
+     }
+    }
+    @media screen and (max-height: 350px) {
+     #proje{
+      top: 650vh;
+     }
+    }
+
+    @media screen and (max-height: 250px) {
+        #proje{
+         top: 750vh;
+        }
+       }
+ 
+.cir{
+    color: white;
+    font-size: 3rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-shadow: 0 0 25px rgba(160, 60, 236, 0.8), 0 0 40px rgba(160, 60, 236, 0.6);
+
+}
+   
+ 
+
+  /*skill shpere*/
+  .sphere-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sphere {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #a03cec9e;
+    border: 1px solid #f2f2f5;
+    border-radius: 50%;
+    transition: transform 0.4s ease, top 0.4s ease;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.2s ease;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 18px;
+    box-shadow: 
+    0 0 10px rgba(161, 77, 255, 0.3),
+    0 0 20px rgba(161, 77, 255, 0.3),
+    0 0 40px rgba(161, 77, 255, 0.3),
+    0 0 80px rgba(161, 77, 255, 0.3);
+}
+
+/* smooth reset animation */
+.sphere.resetting {
+    transition: transform 0.8s ease;
+}
+@media screen and (max-width: 520px) {
+    .sphere {
+        width: 90px;
+        height: 90px;
+        font-size: 10px;
+    }
+}
+/*slide buttons*/
+.slide-btn {
+    position: absolute;
+   
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid  #a03cec9e;
+    
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  
+  .slide-btn.left {
+    left: 10px;
+  }
+  
+  .slide-btn.right {
+    right: 10px;
+  }
+/*footer*/
+/* Black box behind footer */
+
+  
+  /* Footer */
+ /* Black box */
+
+  
+  /* Footer */
+  .contact-footer {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+   width: 40%;
+    position: absolute;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #8c9338d6;
+   
+    top: 530vh; /* Adjust position accordingly */
+    z-index: 1; /* Ensure footer is above the black box */
+    left: 3%;
+  }
+  
+ 
+
+  
+ 
+  
+  .contact-footer h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00ffd5;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  
+  .contact-form textarea {
+    height: 120px;
+    resize: vertical;
+  }
+  
+  .contact-form button {
+    background-color: #00ffd5;
+    color: #000000;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #00c2a8;
+  }
+  
+  .end {
+    position: absolute;
+    top: 80vh;
+    color: #000000;
+    left: 0px;
+  }
+  /*model robo*/
+
+  /* Style for model-viewer */
+#twomodel {
+   top: 520vh; 
+   position: absolute;
+   right: 10px;
+  }
+  
+  
