@@ -364,7 +364,7 @@ document.querySelector('.contact-form').addEventListener('submit', async functio
   };
 
   try {
-    const response = await fetch('http://localhost:3000/api/contact', {
+    const response = await fetch('http://contact-backend-br8j.onrender.com/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
