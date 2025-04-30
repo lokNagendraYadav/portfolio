@@ -350,6 +350,38 @@ window.addEventListener('load', updateModelPosition);
 window.addEventListener('resize', updateModelPosition);
 
 
+// database connetion
+document.querySelector('.contact-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const data = {
+    name: form.name.value,
+    phone: form.phone.value,
+    email: form.email.value,
+    message: form.message.value
+  };
+
+  try {
+    const response = await fetch('http://localhost:3000/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      alert('Message sent successfully!');
+      form.reset(); // clears the form
+    } else {
+      alert('Error sending message.');
+    }
+  } catch (error) {
+    alert('Server error: ' + error.message);
+  }
+});
 
 
 
